@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Play</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <nav>
+        <h1 class="head" onclick="home()">Playing with Text</h1>
+        <ul class="nav">
+        <li onclick="home()">Home</li>
+        <li>To-Do List</li>
+
+    </ul>
+</nav>
+
+<div class="container">
+    <form>
+      <div>
+        <label for="title" class="n">Todo Title</label>
+        <input type="text" id="title" />
+      </div>
+      <div class="form-group">
+        <label for="desc" class="n">Todo Desc</label>
+        <textarea name="" id="desc" cols="25" rows="3"></textarea>
+      </div>
+
+      <button id="submit" type="submit">Submit</button>
+      <button id="deleteBtn">Delete</button>
+    </form>
+    <div id="todo"></div>
+  </div>
+</div>
+  <script>
+    submit.addEventListener("click", (e) => {
+      e.preventDefault();
+      let titlec = title.value;
+      let descc = desc.value;
+      localStorage.setItem("todo", JSON.stringify([titlec, descc]));
+      console.log(e);
+      todo.innerHTML = `
+  <h1>${titlec} </h1>
+  <p> ${descc}</p>`;
+      title.value = "";
+      desc.value = "";
+    });
+
+    deleteBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("todo");
+      todo.innerHTML = "";
+    });
+  </script>
+  <script src="my.js"></script>
+</body>
+</html>

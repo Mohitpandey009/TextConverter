@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Play</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1 class="head" onclick="home()">Playing with Text</h1>
+        <ul class="nav">
+        <li onclick="home()">Home</li>
+        <li onclick="play()">To-Do List</li>
+
+    </ul>
+</nav>
+
+   
+    <h2 class="text-head">Hii in this website you can play with your paragraph text and this website helps you to perform some opration with the text </h2>
+    <div class="body">
+  
+</div>
+
+<div class="main">
+    <textarea name="text" class="text-i" id="text" cols="80" rows="10" placeholder="Write your text here">It's some demo text to check the functionality</textarea>
+    <textarea name="text" id="text-out" class="text" cols="80" rows="10" placeholder="your result"></textarea>
+</div>
+
+
+<button id="btn">UpperCase</button>
+<button id="l-btn">LowerCase</button>
+<button id="f-btn">FristLetter</button>
+<button id="count">Count </button>
+<button id="c-btn" class="btnn">Clear Both Box</button>
+<button id="copy" class="btnn">Copy String</button>
+
+
+<div class="display"></div>
+<div class="display dl"></div>
+
+
+<script src="my.js"></script>
+</body>
+</html>

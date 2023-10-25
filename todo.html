@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>TodoList </title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    color: rgb(237, 237, 103);
+   
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+}
+ input,textarea {
+ margin: 10px auto;
+ color: rgba(0, 0, 0, 0.673);
+ font-size: 15px;
+ outline: none;
+ border: 3px solid rgba(193, 193, 16, 0.711);
+ font-weight: 900;
+ 
+}
+.container{
+    border: 2px solid rgba(82, 58, 58, 0.279);
+    border-radius: 8%;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.9);
+    padding: 40px 40px;
+    background-color: rgba(128, 128, 128, 0.697);
+}
+button{
+    padding: 5px ;
+    border-radius: 19%;
+    border: 3px solid beige;
+    margin: 20px;
+    background-color: rgba(15, 15, 15, 0.697);
+    width: auto;
+    cursor: pointer;
+}
+button:hover{
+    
+    font-weight: bolder;
+}
+
+.n{
+    font-weight: bolder;
+    font-size: large;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div>
+          <label for="title" class="n">Todo Title</label>
+          <input type="text" id="title" />
+        </div>
+        <div class="form-group">
+          <label for="desc" class="n">Todo Desc</label>
+          <textarea name="" id="desc" cols="25" rows="3"></textarea>
+        </div>
+
+        <button id="submit" type="submit">Submit</button>
+        <button id="deleteBtn">Delete</button>
+      </form>
+      <div id="todo"></div>
+    </div>
+
+    <script>
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let titlec = title.value;
+        let descc = desc.value;
+        localStorage.setItem("todo", JSON.stringify([titlec, descc]));
+        console.log(e);
+        todo.innerHTML = `
+    <h1>${titlec} </h1>
+    <p> ${descc}</p>`;
+        title.value = "";
+        desc.value = "";
+      });
+
+      deleteBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("todo");
+        todo.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>
